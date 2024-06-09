@@ -1,15 +1,15 @@
 
 function updateClock() {
     const now = new Date();
-    const hours = now.getHours() % 12;
+    const hours = now.getHours();
     const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+    console.log("now",now)
 
-    const totalMinutes = hours * 60 + minutes + seconds / 60;
-    const degrees = (totalMinutes / 720) * 360; // 720 minutes in 12 hours
-
-    document.querySelector('.face').style.transform = `rotate(-${degrees}deg)`;
-}
-
-setInterval(updateClock, 1000);
-updateClock();
+    const degrees = ((hours % 12) + minutes / 60) * 30+60;
+    console.log("degrees",degrees)
+    const clock = document.querySelector('.numbers');
+    clock.style.transform = `rotate(-${degrees}deg)`; 
+  }
+  
+  setInterval(updateClock, 1000);
+  updateClock();

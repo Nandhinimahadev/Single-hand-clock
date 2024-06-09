@@ -29,12 +29,19 @@ body {
 .hand {
   position: absolute;
   width: 2px;
-  height: 50%;
+  height: 40%;
   background-color: #000;
-  transform-origin: bottom;
+  transform: rotate(-56deg) translateX(40px) rotate(-90deg);
+}
+.center-point {
+  background-color: coral;
+  width: 10px;
+  height: 10px;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
 }
 
 .numbers {
